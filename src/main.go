@@ -55,6 +55,63 @@ func triangle() {
 	fmt.Println(c)
 }
 
+/**
+ * 常量的定义
+ * const 数值可做各种类型使用
+ * const a,b = 3,4
+ *
+ * 使用常量定义枚举
+ * 普通枚举类型
+ * const (
+		cpp = iota
+		_
+		payton
+		goLang
+		javaScript
+	)
+
+ * 自增值枚举类型
+ * const (
+		b = 1 << (10 * iota)
+		kb
+		mb
+		gb
+		tb
+		pb
+	)
+*/
+func consts() {
+	const fileName = "abc.txt"
+	const a, b = 3, 4
+	var c int
+	c = int(math.Sqrt(a*a + b*b))
+	fmt.Println(fileName, c)
+
+}
+
+func enums() {
+	const (
+		cpp = iota
+		_
+		payton
+		goLang
+		javaScript
+	)
+
+	// b ,kb,mb,gb,tb,pb
+	const (
+		b = 1 << (10 * iota)
+		kb
+		mb
+		gb
+		tb
+		pb
+	)
+
+	fmt.Println(cpp, javaScript, payton, goLang)
+	fmt.Println(b, kb, mb, gb, tb, pb)
+}
+
 func main() {
 	fmt.Println("hello go")
 	variable()
@@ -64,6 +121,8 @@ func main() {
 	fmt.Println(aa, ss, bb)
 	euler()
 	triangle()
+	consts()
+	enums()
 }
 
 /**
@@ -83,4 +142,13 @@ eg： var a, b, c, s = 3, 4, true, "def"
 5. 使用:定义变量
 eg a, b, c, s := 3, 4, true, "def"
 注意：只能在函数內使用
+
 */
+
+/**
+ * 变量定义的要点
+ * 变量类型写在变量名之后
+ * 编译器可以推测变量的类型
+ * 没有char 只有rune（32位）
+ * 原生支持复数类型
+ **/
