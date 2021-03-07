@@ -60,6 +60,26 @@ func pow(a, b int) int {
 	return int(math.Pow(float64(a), float64(b)))
 }
 
+/*
+指针
+指针不能运算
+参数传递
+值传递？引用传递？
+go语言只有值传递一种方式
+*/
+func swap1(a, b int) {
+	b, a = a, b
+}
+
+func swap2(a, b *int) {
+	*b, *a = *a, *b
+}
+
+func swap3(a, b int) (int, int) {
+
+	return b, a
+}
+
 func main() {
 	fmt.Println(eval(3, 4, "/"))
 
@@ -80,6 +100,13 @@ func main() {
 		}, 3, 4))
 
 	fmt.Println(sum(1, 2, 3))
+	a, b := 3, 4
+	// swap1(a, b)
+	// fmt.Println(a, b)
+	// swap2(&a, &b)
+	// fmt.Println(a, b)
+	a, b = swap3(a, b)
+	fmt.Println(a, b)
 }
 
 /*
